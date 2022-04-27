@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mago do CSS</title>
+    <style>
+        #grafoContainer {
+            width: 80%;
+            height: 40vw;
+            margin-left: 10%; 
+            margin-top: 5vw; 
+            background-color: rgb(207, 207, 207);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pontoGrafo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            border: solid 2px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section id="grafoContainer">
+        <div id="grafo"></div>
+    </section>
+</body>
+
+<script>
+    function criaPontoGrafo(numeroPonto, adjacentes) {
+        document.getElementById("grafo").innerHTML = "<div class='pontoGrafo'>" + numeroPonto + "</div>";
+        if (adjacentes.length !== 0) {
+            for (let index = 0; index < adjacentes.length; index++) {
+
+                document.getElementById("grafo").innerHTML += "<div class='pontoGrafo'>" + adjacentes[index]; + "</div>";
+            }    
+        }
+    }
+
+    criaPontoGrafo(1, [7])
+</script>
+</html>
